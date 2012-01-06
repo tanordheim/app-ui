@@ -1,0 +1,58 @@
+/*
+ * mixins/border-radius.less
+ *
+ * Snippets of reusable CSS for border radius.
+ */
+
+#border-radius {
+
+  .border-top-left-radius(@size: 5px) {
+    -moz-border-radius-topleft: @size;
+    -webkit-border-top-left-radius: @size;
+    -o-border-top-left-radius: @size;
+    -ms-border-top-left-radius: @size;
+    border-top-left-radius: @size;
+  }
+
+  .border-bottom-left-radius(@size: 5px) {
+    -moz-border-radius-bottomleft: @size;
+    -webkit-border-bottom-left-radius: @size;
+    -o-border-bottom-left-radius: @size;
+    -ms-border-bottom-left-radius: @size;
+    border-bottom-left-radius: @size;
+  }
+  
+  .border-top-right-radius(@size: 5px) {
+    -moz-border-radius-topright: @size;
+    -webkit-border-top-right-radius: @size;
+    -o-border-top-right-radius: @size;
+    -ms-border-top-right-radius: @size;
+    border-top-right-radius: @size;
+  }
+  
+  .border-bottom-right-radius(@size: 5px) {
+    -moz-border-radius-bottomright: @size;
+    -webkit-border-bottom-right-radius: @size;
+    -o-border-bottom-right-radius: @size;
+    -ms-border-bottom-right-radius: @size;
+    border-bottom-right-radius: @size;
+  }
+
+  .border-top-radius(@size: 5px) {
+    .border-top-left-radius(@size);
+    .border-top-right-radius(@size);
+  }
+
+  .border-bottom-radius(@size: 5px) {
+    .border-bottom-left-radius(@size);
+    .border-bottom-right-radius(@size);
+  }
+
+  .border-radius(@size: 5px) {
+    .border-top-left-radius(@size);
+    .border-top-right-radius(@size);
+    .border-bottom-left-radius(@size);
+    .border-bottom-right-radius(@size);
+  }
+
+}

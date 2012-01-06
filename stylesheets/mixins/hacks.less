@@ -1,0 +1,22 @@
+/*
+ * mixins/hacks.less
+ *
+ * Snippets of CSS browser hacks.
+ */
+
+#hacks {
+
+  .clearfix() {
+    zoom: 1;
+    &:before,
+    &:after {
+      display: table;
+      content: "";
+      zoom: 1;
+    }
+    &:after {
+      clear: both;
+    }
+  }
+
+}

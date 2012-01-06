@@ -1,0 +1,16 @@
+/*
+ * mixins/border-radius.less
+ *
+ * Snippets of reusable CSS for border radius.
+ */
+
+#opacity {
+
+  .opacity(@opacity: 100) {
+    filter: e(%("alpha(opacity=%d)", @opacity));
+    -khtml-opacity: @opacity / 100;
+      -moz-opacity: @opacity / 100;
+           opacity: @opacity / 100;
+  }
+
+}

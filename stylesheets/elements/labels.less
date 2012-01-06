@@ -1,0 +1,22 @@
+/*
+ * elements/labels.less
+ *
+ * Styles inline labels.
+ */
+
+.label {
+  padding: 1px 3px 2px;
+  font-size: @basefont - 4;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background-color: #bfbfbf;
+  text-shadow: none;
+  #border-radius > .border-radius(3px);
+
+  &.important { background-color: #c43c35; }
+  &.warning { background-color: #f89406; }
+  &.success { background-color: #46a546; }
+  &.notice { background-color: #62cffc; }
+}

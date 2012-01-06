@@ -1,0 +1,17 @@
+/*
+ * mixins/animations.less
+ *
+ * Snippets of reusable CSS animations.
+ */
+
+#animations {
+
+  .transition(@transition) {
+     -webkit-transition: @transition;
+        -moz-transition: @transition;
+         -ms-transition: @transition;
+          -o-transition: @transition;
+             transition: @transition;
+  }
+
+}

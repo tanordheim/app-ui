@@ -1,0 +1,41 @@
+/*
+ * elements/state-information.less
+ *
+ * Styles the state information bar containing the breadcrumb and search field.
+ */
+
+.state-information {
+  background: #fff;
+  position: absolute;
+  top: 40px;
+  left: 0;right: 0;
+  z-index: 3;
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid #d7d7d7;
+  #shadows > .box-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
+  #gradients > .vertical(#fff, #f8f8f8);
+
+  .breadcrumb-navigation {
+    padding-left: 38px;
+
+    ul {
+      margin: 0;
+
+      li {
+        display: inline;
+        list-style: none;
+
+        .divider {
+          padding: 0 5px;
+          color: #999;
+        }
+
+        // Remove divider from the last element.
+        &:last-child .divider {
+          display: none;
+        }
+      }
+    }
+  }
+}

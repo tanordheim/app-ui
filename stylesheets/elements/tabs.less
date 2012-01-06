@@ -1,0 +1,47 @@
+/*
+ * elements/tabs.less
+ *
+ * Styles tab navigations.
+ */
+
+.tabs {
+  margin: 0 0 @baseline;
+  padding: 0;
+  border-bottom: 1px solid #ddd;
+  
+  > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    #hacks > .clearfix();
+
+    > li {
+      float: left;
+      position: relative;
+      margin-bottom: -1px;
+
+      > a {
+        display: block;
+        padding: 0 15px;
+        margin-right: 2px;
+        line-height: (@baseline * 2) - 2;
+        border: 1px solid transparent;
+        #border-radius > .border-top-radius(4px);
+
+        &:hover {
+          text-decoration: none;
+          background-color: #eee;
+          border-color: #eee #eee #ddd;
+        }
+      }
+
+      &.current > a, &.current > a:hover {
+        color: #808080;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-bottom-color: transparent;
+        cursor: default;
+      }
+    }
+  }
+}
