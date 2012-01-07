@@ -18,9 +18,10 @@
 
     // Total width of the container is 100%.
     // We support 16 columns.
-    // Each column has a left margin of 1%, except the first.
-    // This leaves 85% of space, which makes each column 5.3125% wide.
-    width: 5.3125% * @columnSpan;
+    // That makes each column 6.25% wide.
+    // In addition, subtract 1% per column we're spanning to make room for
+    // margins.
+    width: (6.25% * @columnSpan) - 1;
 
   }
 
