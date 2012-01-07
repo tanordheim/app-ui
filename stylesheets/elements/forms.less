@@ -92,7 +92,7 @@ input[type="file"] {
   #shadows > .box-shadow(none);
 }
 
-input[type="button"], input[type="reset"], input[type="submit"] {
+input[type="button"], input[type="reset"], input[type="submit"], .button {
   width: auto;
   height: auto;
 }
@@ -247,5 +247,11 @@ button, input[type="button"], input[type="submit"], input[type="reset"], a.butto
   &[type="submit"], &.primary {
     color: #fff;
     #gradients > .gradient-bar(#049cdb, #0064cd);
+  }
+
+  // Dangerous buttons.
+  &.danger {
+    color: #fff;
+    #gradients > .gradient-bar(#ee5f5b, #c43c35);
   }
 }
