@@ -270,4 +270,20 @@ button, input[type="button"], input[type="submit"], input[type="reset"], a.butto
     color: #fff;
     #gradients > .gradient-bar(#ee5f5b, #c43c35);
   }
+
+  // Button containing an icon.
+  &.has-icon {
+    padding-left: 28px;
+    position: relative;
+
+    .ui-icon {
+      position: absolute;
+      top: 4px;
+      left: 5px;
+    }
+
+    &.primary .ui-icon {
+      background-image: url(jquery-ui-images/ui-icons_ededed_256x240.png);
+    }
+  }
 }

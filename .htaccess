@@ -1,2 +1,3 @@
 RewriteEngine on
 RewriteRule ^vendor\/assets\/stylesheets\/variables\.less$ /static/assets/stylesheets/variables.less
+RewriteRule ^static\/jquery-ui-images\/(.*)$ /vendor/assets/stylesheets/jquery-ui-images/$1

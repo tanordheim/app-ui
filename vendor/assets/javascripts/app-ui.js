@@ -42,4 +42,17 @@ $(document).ready(function() {
 
   }
 
+  // Add styling to button links with data-icon set.
+  $('a.button[data-icon]').each(function() {
+
+    var button = $(this);
+    var iconName = button.attr('data-icon');
+
+    var iconContainer = $('<span/>').addClass('ui-icon').addClass('ui-icon-' + iconName);
+    button.prepend(iconContainer);
+
+    button.addClass('has-icon').addClass('ui-state-default');
+
+  });
+
 });
