@@ -18,6 +18,7 @@
 
   .breadcrumb-navigation {
     padding-left: 38px;
+    float: left;
 
     ul {
       margin: 0;
@@ -34,6 +35,30 @@
         // Remove divider from the last element.
         &:last-child .divider {
           display: none;
+        }
+      }
+    }
+  }
+
+  .search {
+    margin-bottom: 0;
+    float: right;
+    padding-right: 25px;
+
+    fieldset {
+      margin-bottom: 0;
+      padding-top: 0;
+
+      .input {
+        margin-bottom: 0;
+
+        label {
+          display: none;
+        }
+
+        input[type="search"] {
+          width: 242px;
+          padding: 0 4px;
         }
       }
     }

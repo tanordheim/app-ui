@@ -10,18 +10,18 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet/less" type="text/css" href="stylesheets/app-ui.less">
+    <link rel="stylesheet/less" type="text/css" href="../vendor/assets/stylesheets/app-ui.less">
     
     <script src="libs/less.js" type="text/javascript"></script>
     <script src="libs/jquery.js" type="text/javascript"></script>
     <script src="libs/jquery-ui.js" type="text/javascript"></script>
-    <script src="javascripts/alerts.js" type="text/javascript"></script>
-    <script src="javascripts/modal.js" type="text/javascript"></script>
-    <script src="javascripts/demo.js" type="text/javascript"></script>
+    <script src="../vendor/assets/javascripts/alerts.js" type="text/javascript"></script>
+    <script src="../vendor/assets/javascripts/modal.js" type="text/javascript"></script>
+    <script src="../vendor/assets/javascripts/demo.js" type="text/javascript"></script>
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/assets/stylesheets/jquery-ui.css">
     <!--[if IE]>
-    <link rel="stylesheet" type="text/css" href="stylesheets/jquery-ui.ie.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/assets/stylesheets/jquery-ui.ie.css">
     <![endif]-->
     
   </head>
@@ -31,9 +31,9 @@
       <nav class="primary-navigation">
         <ul>
           <li><a href="index.html">General styling</a></li>
-          <li><a href="no_content_sidebar.html">No content sidebar</a></li>
+          <li class="current"><a href="no_content_sidebar.html">No content sidebar</a></li>
           <li><a href="no_content_details.html">No content details</a></li>
-          <li class="current"><a href="no_sidebars.html">No sidebars</a></li>
+          <li><a href="no_sidebars.html">No sidebars</a></li>
           <li><a href="login_screen.html">Login screen</a></li>
         </ul>
       </nav>
@@ -50,28 +50,28 @@
     <section class="state-information">
       <nav class="breadcrumb-navigation">
         <ul>
-          <li><a href="#">Nav 1</a> <span class="divider">/</div></li>
-          <li><a href="#">Nav 2</a> <span class="divider">/</div></li>
-          <li><a href="#">Nav 3</a> <span class="divider">/</div></li>
+          <li><a href="#">Nav 1</a> <span class="divider">/</span></li>
+          <li><a href="#">Nav 2</a> <span class="divider">/</span></li>
+          <li><a href="#">Nav 3</a> <span class="divider">/</span></li>
         </ul>
       </nav>
     </section>
 
     <section class="content-container">
-      <nav class="content-sidebar">
-        <ul>
-          <li class="current"><a href="#">Nav 1</a></li>
-          <li><a href="#">Nav 2</a></li>
-        </ul>
-      </nav>
-      <article class="content has-content-sidebar">
+      <article class="content has-content-details">
         <header class="page-header">
-          <h1>No content details</h1>
+          <h1>No content sidebar</h1>
         </header>
         <article>
-          <p>This page has no content details sidebar to the right of the primary content block.</p>
+          <p>This page has no content sidebar to the left of the primary content block.</p>
         </aricle>
       </article>
+      <aside class="content-details">
+        <h3>Content Details</h3>
+        <p>
+          This is an optional sidebar supplementing the primary content.
+        </p>
+      </aside>
     </section>
 
   </body>
