@@ -262,7 +262,9 @@ button, input[type="button"], input[type="submit"], input[type="reset"], a.butto
   // Primary buttons.
   &[type="submit"], &.primary {
     color: #fff;
-    #gradients > .gradient-bar(#049cdb, #0064cd);
+    @to: darken(@brand_color, 27);
+    @from: lighten(@to, 10);
+    #gradients > .gradient-bar(@from, @to);
   }
 
   // Dangerous buttons.
