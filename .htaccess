@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^vendor\/assets\/stylesheets\/variables\.less$ /static/assets/stylesheets/variables.less
