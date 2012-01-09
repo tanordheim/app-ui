@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.homepage      = 'https://github.com/binarymarbles/app-ui'
   s.summary       = 'Base UI for Binary Marbles web applications'
 
-  s.files         = Dir['lib/**/*'] + Dir['vendor/**/*'] + ['README.md']
+  s.files         = Dir['lib/**/*'] + Dir['vendor/**/*'] + ['README.md'] - ['vendor/assets/stylesheets/variables.less']
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ['lib']
