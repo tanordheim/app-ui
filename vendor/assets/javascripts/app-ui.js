@@ -13,7 +13,7 @@ $(document).ready(function() {
   if (content.length > 0) {
 
     var contentSidebar = $('.content-container > .content-sidebar');
-    var contentDetails = $('.content-container > .content-details');
+    var contentDetails = $('.content-container > .content > .content-details');
 
     // Add has-content-details and has-content-sidebar classes to the content
     // article element if content details and/or a sidebar is present in the DOM.
