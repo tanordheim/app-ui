@@ -128,6 +128,12 @@
       $('#' + $this.attr('data-controls-modal')).modal($this.data());
     });
 
+    $('body').delegate('[data-close-modal]', 'click', function(e) {
+      e.preventDefault();
+      var $this = $(this).data('hide', true);
+      $(this).closest('.modal').modal('hide');
+    });
+
   });
 
 }(window.jQuery || window.ender);
