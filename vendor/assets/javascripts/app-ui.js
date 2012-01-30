@@ -30,8 +30,8 @@ $(document).ready(function() {
     //
     // TODO - This should be fixed in CSS eventually.
     var minHeight = 0;
-    if (contentSidebar.length > 0) {
-      minHeight = contentSidebar.outerHeight();
+    if (contentSidebar.length > 0 && $('> ul', contentSidebar).length > 0) {
+      minHeight = $('> ul', contentSidebar).outerHeight();
     }
     if (contentDetails.length > 0 && contentDetails.outerHeight() > minHeight) {
       minHeight = contentDetails.outerHeight()
