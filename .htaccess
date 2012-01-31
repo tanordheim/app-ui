@@ -1,4 +1,4 @@
 RewriteEngine on
-RewriteRule ^vendor\/assets\/stylesheets\/variables\.less$ /static/assets/stylesheets/variables.less
-RewriteRule ^static\/jquery-ui-images\/(.*)$ /vendor/assets/stylesheets/jquery-ui-images/$1
-RewriteRule ^static\/(.+)\.css$ /vendor/assets/stylesheets/$1.css
+RewriteRule ^vendor\/assets\/stylesheets\/frameworks\/app-ui\/variables\.less$ /static/assets/stylesheets/frameworks/app-ui/variables.less
+RewriteRule ^static\/jquery-ui-images\/(.*)$ /vendor/assets/stylesheets/frameworks/app-ui/jquery-ui-images/$1
+# RewriteRule ^static\/(.+)\.css$ /vendor/assets/stylesheets/$1.css
