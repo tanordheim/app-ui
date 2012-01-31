@@ -1,3 +1,9 @@
+/*
+ * app-ui/tabs.js
+ *
+ * Support JavaScript for tabs displayed in the UI.
+ */
+
 $.fn.tabNavigation = function() {
 
   var tabContainers = $(this);

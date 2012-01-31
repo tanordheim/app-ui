@@ -1,5 +1,5 @@
 /*
- * modal.js
+ * app-ui/modal.js
  *
  * Support JavaScript for modal dialogs displayed in the UI.
  */

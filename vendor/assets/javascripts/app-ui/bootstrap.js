@@ -1,5 +1,5 @@
 /*
- * app-ui.js
+ * app-ui/bootstrap.js
  *
  * Support JavaScript for the basic application UI.
  */

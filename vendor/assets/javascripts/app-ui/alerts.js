@@ -1,5 +1,5 @@
 /*
- * alerts.js
+ * app-ui/alerts.js
  *
  * Support JavaScript for alert messages displayed in the UI.
  */
