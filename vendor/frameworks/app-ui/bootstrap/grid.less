@@ -1,0 +1,65 @@
+/*
+ * app-ui/bootstrap/grid.less
+ *
+ * 16 column grid setup.
+ */
+
+#grid {
+
+  // Comming styling for every column in a grid.
+  .column() {
+    display: inline;
+    float: left;
+    margin-left: 1%;
+  }
+
+  // Styling for a column within the grid.
+  .columns(@columnSpan: 1) {
+
+    // Total width of the container is 100%.
+    // We support 16 columns.
+    // That makes each column 6.25% wide.
+    // In addition, subtract 1% per column we're spanning to make room for
+    // margins.
+    width: (6.25% * @columnSpan) - 1;
+
+  }
+
+}
+
+.grid {
+  #hacks > .clearfix();
+}
+ 
+// Find all .grid-* classes within .grid and give them the neccesary properties
+// for grid columns.
+.grid > [class*="grid-"] {
+  #grid > .column();
+
+  // Remove left margin on the first column.
+  &:first-child {
+    margin-left: 0;
+  }
+}
+ 
+// Grid columns.
+.grid-1 { #grid > .columns(1); }
+.grid-2 { #grid > .columns(2); }
+.grid-3 { #grid > .columns(3); }
+.grid-4 { #grid > .columns(4); }
+.grid-5 { #grid > .columns(5); }
+.grid-6 { #grid > .columns(6); }
+.grid-7 { #grid > .columns(7); }
+.grid-8 { #grid > .columns(8); }
+.grid-9 { #grid > .columns(9); }
+.grid-10 { #grid > .columns(10); }
+.grid-11 { #grid > .columns(11); }
+.grid-12 { #grid > .columns(12); }
+.grid-13 { #grid > .columns(13); }
+.grid-14 { #grid > .columns(14); }
+.grid-15 { #grid > .columns(15); }
+.grid-16 { #grid > .columns(16); }
+
+// One third/two thirts grid columns.
+.grid-1-3 { width: 32%; }
+.grid-2-3 { width: 65%; }

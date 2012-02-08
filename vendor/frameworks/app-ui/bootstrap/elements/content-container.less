@@ -1,0 +1,111 @@
+/*
+ * app-ui/bootstrap/elements/content-container.less
+ *
+ * Styles the primary content container.
+ */
+
+.content-container {
+  background-color: #fff;
+  position: absolute;
+  top: 71px;
+  left: 0;
+  right: 0;
+  margin: 0 25px;
+  z-index: 4;
+  #shadows > .box-shadow(rgba(0, 0, 0, 0.2), 0, 2px, 2px);
+
+  .content-sidebar {
+    background: #ececec;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 175px;
+    border-right: 1px solid #d7d7d7;
+
+    ul {
+      margin: 0;
+
+      li {
+        list-style: none;
+
+        a {
+          display: block;
+          line-height: 40px;
+          padding: 0 15px;
+          border-bottom: 1px solid #d7d7d7;
+          color: #666;
+
+          &:hover {
+            color: #666;
+            text-decoration: none;
+          }
+        }
+
+        // Current state effect.
+        &.current a {
+          background: #fff;
+          position: relative;
+          right: -1px;
+        }
+      }
+    }
+  }
+
+  .content-details {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 220px;
+    padding: 15px;
+    border-left: 1px solid #d7d7d7;
+
+    header {
+      #hacks > .clearfix();
+
+      h3 {
+        float: left;
+      }
+
+      ul {
+        float: right;
+        list-style: none;
+        margin-bottom: 0;
+
+        li {
+          list-style: none;
+          display: inline-block;
+          padding-top: 11px;
+          font-size: 11px;
+        }
+      }
+    }
+
+    .content-actions {
+      ul {
+        list-style: none;
+        margin-left: 0;
+
+        li {
+          list-style: none;
+          margin-bottom: @baseline / 2;
+        }
+      }
+    }
+  }
+
+  article.content {
+    padding: 15px;
+    #hacks > .clearfix();
+    background: #fff;
+
+    &.has-content-sidebar {
+      margin-left: 176px;
+    }
+
+    &.has-content-details {
+      margin-right: 251px;
+    }
+  }
+}
