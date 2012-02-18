@@ -1,23 +1,69 @@
 /*
  * Binary Marbles Application UI
+ * Copyright (C) 2011-2012 Binary Marbles
+ * http://www.binarymarbles.com/
+ *
+ * Based on Twitter Bootstrap, Copyright (C) 2012 Twitter, Inc.
+ * http://twitter.github.com/bootstrap/
+ * 
+ * Main stylesheet for the application UI. This is loaded by app-ui/bootstrap.less.
  */
 
 // CSS Reset.
-@import 'reset.less';
+@import 'twitter-bootstrap/reset.less';
 
-// Variables and mixins.
+// Variables.
 @import 'globals.less';
 @import 'variables.less';
+
+// Mixins.
 @import 'mixins.less';
 
-// Grid layout.
+// Grid system and page structure.
+@import 'scaffolding.less';
+@import 'application-header.less';
+@import 'breadcrumb-and-search.less';
+@import 'content.less';
 @import 'grid.less';
 
-// Basic UI styling.
-@import 'elements.less';
+// Base CSS.
+@import 'twitter-bootstrap/type.less';
+@import 'twitter-bootstrap/code.less';
+@import 'twitter-bootstrap/tables.less';
+@import 'forms.less';
 
-// Login screen styling.
-@import 'login_screen.less';
+// Components: Common.
+@import 'sprites.less';
+@import 'twitter-bootstrap/dropdowns.less';
+@import 'twitter-bootstrap/wells.less';
+@import 'twitter-bootstrap/component-animations.less';
+@import 'twitter-bootstrap/close.less';
 
-// jQuery UI styling.
-@import 'jquery-ui.app-ui.less';
+// Components: Buttons & Alerts.
+@import 'twitter-bootstrap/buttons.less';
+@import 'twitter-bootstrap/button-groups.less';
+@import 'twitter-bootstrap/alerts.less';
+
+// Components: Nav.
+@import 'twitter-bootstrap/navs.less';
+@import 'breadcrumbs.less';
+@import 'twitter-bootstrap/pagination.less';
+@import 'twitter-bootstrap/pager.less';
+
+// Components: Popovers.
+@import 'modals.less';
+@import 'twitter-bootstrap/tooltip.less';
+@import 'twitter-bootstrap/popovers.less';
+
+// Components: Misc.
+@import 'twitter-bootstrap/thumbnails.less';
+@import 'twitter-bootstrap/labels.less';
+@import 'twitter-bootstrap/progress-bars.less';
+@import 'twitter-bootstrap/accordion.less';
+@import 'twitter-bootstrap/hero-unit.less';
+
+// Reponsive design.
+@import 'responsive.less';
+
+// Utility classes.
+@import "twitter-bootstrap/utilities.less"; // Has to be last to override when necessary

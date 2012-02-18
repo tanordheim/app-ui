@@ -1,14 +1,110 @@
 /*
- * app-ui/bootstrap/mixins
+ * Binary Marbles Application UI
+ * Copyright (C) 2011-2012 Binary Marbles
+ * http://www.binarymarbles.com/
  *
- * Snippets of reusable CSS used throughout the application UI.
+ * Based on Twitter Bootstrap, Copyright (C) 2012 Twitter, Inc.
+ * http://twitter.github.com/bootstrap/
+ * 
+ * Override some mixins from the Twitter Bootstrap mixins.
  */
 
-@import 'mixins/hacks.less';
-@import 'mixins/font-stacks.less';
-@import 'mixins/shadows.less';
-@import 'mixins/gradients.less';
-@import 'mixins/border-radius.less';
-@import 'mixins/animations.less';
-@import 'mixins/opacity.less';
-@import 'mixins/table-columns.less';
+@import 'twitter-bootstrap/mixins.less';
+
+// Gradients
+// -------------------------
+#gradient {
+  .navigationTab(@baseColor: #000) {
+    background-color: @baseColor;
+    background-repeat: repeat-x;
+    background-image: -moz-linear-gradient(bottom, darken(@baseColor, 25), @baseColor 6%, lighten(@baseColor, 25));
+    background-image: -webkit-linear-gradient(bottom, darken(@baseColor, 25), @baseColor 6%, lighten(@baseColor, 15));
+    background-image: -o-linear-gradient(bottom, darken(@baseColor, 25), @baseColor 6%, lighten(@baseColor, 15));
+    background-image: linear-gradient(bottom, darken(@baseColor, 25), @baseColor 6%, lighten(@baseColor, 15));
+  }
+
+  .currentNavigationTab() {
+    background-color: #fff;
+    background-repeat: repeat-x;
+    background-image: -moz-linear-gradient(bottom, #fff 50%, #ede9e8);
+    background-image: -webkit-linear-gradient(bottom, #fff 50%, #ede9e8);
+    background-image: -o-linear-gradient(bottom, #fff 50%, #ede9e8);
+    background-image: linear-gradient(bottom, #fff 50%, #ede9e8);
+  }
+}
+
+// Fixed grid system
+// -------------------------
+#gridSystem {
+
+  // Generate the fixed grid system.
+  .generate(@gridColumns, @gridColumnWidth, @gridGutterWidth) {
+
+    // Row surrounds the columns
+    .fixed-grid {
+      margin-left: @gridGutterWidth * -1;
+      .clearfix();
+    }
+
+    // Find all .grid-# classes within .fixed-grid and give them the necessary
+    // properties for grid columns (supported by all browsers back to IE7, thanks
+    // @dhg)
+    [class*="grid-"] {
+      #gridSystem > .gridColumn(@gridGutterWidth);
+    }
+    // Default columns
+    .fixed-grid-1     { #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 1); }
+    .fixed-grid-2     { #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 2); }
+    .fixed-grid-3     { #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 3); }
+    .fixed-grid-4     { #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 4); }
+    .fixed-grid-5     { #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 5); }
+    .fixed-grid-6     { #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 6); }
+    .fixed-grid-7     { #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 7); }
+    .fixed-grid-8     { #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 8); }
+    .fixed-grid-9     { #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 9); }
+    .fixed-grid-10   { #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 10); }
+    .fixed-grid-11    { #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 11); }
+    .fixed-grid-12,
+    .container { #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 12); }
+  }
+
+}
+
+// Fluid grid system
+// -------------------------
+#fluidGridSystem {
+  
+  // Generate the flud grid system.
+  .generate(@gridColumns, @fluidGridColumnWidth, @fluidGridGutterWidth) {
+
+    // Grid surrounds the columns
+    .grid {
+      width: 100%;
+      .clearfix();
+
+      // Find all .grid-# classes within .grid and give them the necessary
+      // properties for grid columns (supported by all browsers back to IE7, thanks
+      // @dhg)
+      [class*="grid-"] {
+        #fluidGridSystem > .gridColumn(@fluidGridGutterWidth);
+      }
+      [class*="grid-"]:first-child {
+        margin-left: 0;
+      }
+      // Default columns
+      .grid-1     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 1); }
+      .grid-2     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 2); }
+      .grid-3     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 3); }
+      .grid-4     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 4); }
+      .grid-5     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 5); }
+      .grid-6     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 6); }
+      .grid-7     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 7); }
+      .grid-8     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 8); }
+      .grid-9     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 9); }
+      .grid-10    { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 10); }
+      .grid-11    { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 11); }
+      .grid-12    { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 12); }
+    }
+  }
+  
+}

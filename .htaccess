@@ -1,2 +1,2 @@
 RewriteEngine on
-RewriteRule ^vendor\/frameworks\/app-ui\/bootstrap\/variables\.less$ /static/stylesheets/variables.less
+RewriteRule ^vendor\/frameworks\/app-ui\/bootstrap\/variables\.less$ /docs/assets/css/variables.less

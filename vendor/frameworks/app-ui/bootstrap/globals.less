@@ -1,18 +1,30 @@
 /*
- * app-ui/bootstrap/globals.less
+ * Binary Marbles Application UI
+ * Copyright (C) 2011-2012 Binary Marbles
+ * http://www.binarymarbles.com/
  *
- * Global variables defining the look and feel of the application UI.
+ * Based on Twitter Bootstrap, Copyright (C) 2012 Twitter, Inc.
+ * http://twitter.github.com/bootstrap/
+ * 
+ * Override some globals from the Twitter Bootstrap variables.
  */
 
-// Header colors.
-@brand_color: #c0c0c0;
+@import 'twitter-bootstrap/variables.less';
 
-// Typography.
-@baseline: 18px;
-@basefont: 13px;
+// BRANDING
+// --------------------------------------------------
+@brandColor:                   #c0c0c0;
 
-// Unify test colors.
-// @brand_color: #9ecc99;
+// APPLICATION HEADER
+// --------------------------------------------------
+@primaryNavigationButtonColor: darken(@brandColor, 27);
 
-// Adapt test colors.
-// @brand_color: #99b3cc;
+// COMPONENT VARIABLES
+// --------------------------------------------------
+
+// Sprite icons path
+@iconSpritePath:          'glyphicons-halflings.png';
+@iconWhiteSpritePath:     'glyphicons-halflings-white.png';
+
+@zindexModalBackdrop:     1;
+@zindexModal:             10000;
