@@ -1,23 +1,34 @@
 /*
  * Binary Marbles Application UI
+ * Copyright (C) 2011-2012 Binary Marbles
+ * http://www.binarymarbles.com/
+ *
+ * Based on Twitter Bootstrap, Copyright (C) 2012 Twitter, Inc.
+ * http://twitter.github.com/bootstrap/
+ * 
+ * Main stylesheet for the application UI. This is loaded by app-ui/bootstrap.less.
  */
 
 // CSS Reset.
-@import 'reset.less';
+@import 'twitter-bootstrap/reset.less';
 
-// Variables and mixins.
+// Variables.
+@import 'twitter-bootstrap/variables.less';
 @import 'globals.less';
 @import 'variables.less';
+
+// Mixins.
+@import 'twitter-bootstrap/mixins.less';
 @import 'mixins.less';
 
-// Grid layout.
+// Grid system and page structure.
+@import 'twitter-bootstrap/scaffolding.less';
+@import 'scaffolding.less';
+@import 'application-header.less';
+@import 'breadcrumb-and-search.less';
+@import 'content.less';
 @import 'grid.less';
 
-// Basic UI styling.
-@import 'elements.less';
-
-// Login screen styling.
-@import 'login_screen.less';
-
-// jQuery UI styling.
-@import 'jquery-ui.app-ui.less';
+// Components: Nav
+@import 'twitter-bootstrap/breadcrumbs.less';
+@import 'breadcrumbs.less';

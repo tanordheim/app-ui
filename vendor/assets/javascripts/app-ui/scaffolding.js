@@ -6,8 +6,11 @@
  * Based on Twitter Bootstrap, Copyright (C) 2012 Twitter, Inc.
  * http://twitter.github.com/bootstrap/
  * 
- * Main stylesheet for the application UI. This should be loaded from
- * application.css in the Rails application.
+ * Base UI scaffolding.
  */
 
-@import 'bootstrap/bootstrap.less';
+var AppUiScaffold = {
+};
+
+$(document).ready(function() {
+});

@@ -1,0 +1,42 @@
+/*
+ * Binary Marbles Application UI
+ * Copyright (C) 2011-2012 Binary Marbles
+ * http://www.binarymarbles.com/
+ *
+ * Based on Twitter Bootstrap, Copyright (C) 2012 Twitter, Inc.
+ * http://twitter.github.com/bootstrap/
+ * 
+ * Demo specific styling.
+ */
+
+.less-error-message {
+  position: relative;
+  z-index: 999999;
+}
+
+/*
+ * Grid system
+ */
+.show-grid {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.show-grid [class*="grid-"] {
+  background-color: #eee;
+  text-align: center;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+  min-height: 30px;
+  line-height: 30px;
+}
+.show-grid:hover [class*="grid-"] {
+  background: #ddd;
+}
+.show-grid .show-grid {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.show-grid .show-grid [class*="grid-"] {
+  background-color: #ccc;
+}
