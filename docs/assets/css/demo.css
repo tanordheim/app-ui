@@ -40,3 +40,26 @@
 .show-grid .show-grid [class*="grid-"] {
   background-color: #ccc;
 }
+
+/* For input sizes, make them display block */
+.docs-input-sizes select,
+.docs-input-sizes input[type=text] {
+  display: block;
+  margin-bottom: 9px;
+}
+
+/* Icons
+------------------------- */
+.the-icons {
+  margin-left: 0;
+  list-style: none;
+}
+.the-icons i:hover {
+  background-color: rgba(255,0,0,.25);
+}
+
+/* Thumbnails */
+.thumbnail {
+  margin-bottom: 9px;
+  background-color: #fff;
+}

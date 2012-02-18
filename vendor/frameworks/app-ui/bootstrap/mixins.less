@@ -9,6 +9,8 @@
  * Override some mixins from the Twitter Bootstrap mixins.
  */
 
+@import 'twitter-bootstrap/mixins.less';
+
 // Gradients
 // -------------------------
 #gradient {
@@ -31,6 +33,43 @@
   }
 }
 
+// Fixed grid system
+// -------------------------
+#gridSystem {
+
+  // Generate the fixed grid system.
+  .generate(@gridColumns, @gridColumnWidth, @gridGutterWidth) {
+
+    // Row surrounds the columns
+    .fixed-grid {
+      margin-left: @gridGutterWidth * -1;
+      .clearfix();
+    }
+
+    // Find all .grid-# classes within .fixed-grid and give them the necessary
+    // properties for grid columns (supported by all browsers back to IE7, thanks
+    // @dhg)
+    [class*="grid-"] {
+      #gridSystem > .gridColumn(@gridGutterWidth);
+    }
+    // Default columns
+    .fixed-grid-1     { #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 1); }
+    .fixed-grid-2     { #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 2); }
+    .fixed-grid-3     { #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 3); }
+    .fixed-grid-4     { #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 4); }
+    .fixed-grid-5     { #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 5); }
+    .fixed-grid-6     { #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 6); }
+    .fixed-grid-7     { #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 7); }
+    .fixed-grid-8     { #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 8); }
+    .fixed-grid-9     { #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 9); }
+    .fixed-grid-10   { #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 10); }
+    .fixed-grid-11    { #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 11); }
+    .fixed-grid-12,
+    .container { #gridSystem > .columns(@gridGutterWidth, @gridColumnWidth, @gridRowWidth, 12); }
+  }
+
+}
+
 // Fluid grid system
 // -------------------------
 #fluidGridSystem {
@@ -46,25 +85,25 @@
       // Find all .grid-# classes within .grid and give them the necessary
       // properties for grid columns (supported by all browsers back to IE7, thanks
       // @dhg)
-      > [class*="grid-"] {
+      [class*="grid-"] {
         #fluidGridSystem > .gridColumn(@fluidGridGutterWidth);
       }
-      > [class*="grid-"]:first-child {
+      [class*="grid-"]:first-child {
         margin-left: 0;
       }
       // Default columns
-      > .grid-1     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 1); }
-      > .grid-2     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 2); }
-      > .grid-3     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 3); }
-      > .grid-4     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 4); }
-      > .grid-5     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 5); }
-      > .grid-6     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 6); }
-      > .grid-7     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 7); }
-      > .grid-8     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 8); }
-      > .grid-9     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 9); }
-      > .grid-10    { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 10); }
-      > .grid-11    { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 11); }
-      > .grid-12    { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 12); }
+      .grid-1     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 1); }
+      .grid-2     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 2); }
+      .grid-3     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 3); }
+      .grid-4     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 4); }
+      .grid-5     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 5); }
+      .grid-6     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 6); }
+      .grid-7     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 7); }
+      .grid-8     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 8); }
+      .grid-9     { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 9); }
+      .grid-10    { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 10); }
+      .grid-11    { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 11); }
+      .grid-12    { #fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, 12); }
     }
   }
   
