@@ -113,11 +113,11 @@ $.modal = (title, body) ->
 
 $ ->
 
-  $('[data-modal]').live 'click', (e) ->
+  $('[data-toggle="modal"][data-target]').live 'click', (e) ->
     e? && e.preventDefault()
     target = $(e.target)
 
-    body = $(target.attr('data-modal')).html()
-    title = target.attr('data-modal-title') || 'No title'
+    body = $(target.attr('data-target')).html()
+    title = target.attr('data-title') || 'No title'
 
     dialog = new Dialog(title, body)

@@ -137,15 +137,12 @@
         <a href="#" class="btn" data-dismiss="modal">Close</a>
       </div>
     </div>
-    <a data-modal="#myModal" data-modal-title="Modal header" class="btn btn-primary btn-large">Launch demo modal</a>
+    <a data-toggle="modal" data-target="#myModal" data-title="Modal header" class="btn btn-primary btn-large">Launch demo modal</a>
     <br>
 
     <h3>Markup</h3>
-    <p>You can activate modals on your page easily without having to write a single line of javascript. Just set <code>data-modal="#foo"</code> on a controller element with a <code>data-modal-title="Title Text"</code> which corresponds to a modal element id, and when clicked, it will launch your modal.</p>
+    <p>You can activate modals on your page easily without having to write a single line of javascript. Just set <code>data-toggle="modal"</code> on a controller element with a <code>data-target="#foo"</code> and <code>data-title="Dialog Title"</code> which corresponds to a modal element id and the name of the dialog, and when clicked, it will launch your modal.</p>
     <p>FIXME: Add code sample.</p>
-    <div class="alert alert-info">
-      <strong>Heads up!</strong> If you want your modal to animate in and out, just add a <code>.fade</code> class to the <code>.modal</code> element (refer to the demo to see this in action) and include bootstrap-transition.js.
-    </div>
   </div>
 </div>
 
