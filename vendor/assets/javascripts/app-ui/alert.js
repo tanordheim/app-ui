@@ -92,3 +92,54 @@
   })
 
 }( window.jQuery );
+
+$.displayAlert = function(message) {
+
+  // Remove all pre-existing messages from the DOM.
+  $('div.alert').remove();
+
+  // Find the appropriate place to put it.
+  if ($('.page-header').length > 0) {
+
+    // If we have a page header, insert it after that.
+    $('.page-header:first').after(message);
+
+  } else {
+
+    // If all else fails, add it to the top of the content element.
+    $('div.content:first').prepend(message);
+
+  }
+
+}
+
+// Show flash messages after completing ajax requests
+$(document).ajaxComplete(function(e, request) {
+
+  var messageType = request.getResponseHeader('X-Message-Type');
+  var message = request.getResponseHeader('X-Message');
+  if (messageType && message) {
+
+    // Build the DOM for the message.
+    var messageContainer = $("<div class='alert alert-" + messageType + "'/>");
+    messageContainer.append("<a class='close' data-dismiss='alert'>&times;</a>");
+    messageContainer.append(message);
+
+    // Display the message.
+    $.displayAlert(messageContainer);
+
+  }
+  
+});
+
+$(document).ready(function() {
+
+  // If the flash message container has a message in it, move it into place.
+  if ($('#flash-message > article').length > 0) {
+
+    var message = $('#flash-message > article');
+    $.displayAlert(message);
+
+  }
+
+});

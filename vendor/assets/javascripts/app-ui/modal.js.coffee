@@ -111,6 +111,10 @@ class Dialog
 $.modal = (title, body) ->
   new Dialog(title, body)
 
+$.closeModal = ->
+  if $('body > .modal').length > 0
+    $('body > .modal').data('modal').close()
+
 $ ->
 
   $('[data-toggle="modal"][data-target]').live 'click', (e) ->

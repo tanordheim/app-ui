@@ -29,15 +29,11 @@ module AppUi #:nodoc
 
       end
 
-      module InstanceMethods #:nodoc
-
-        # Assign the current navigation section being viewed.
-        #
-        # @param [ String ] identifier The identifier of the current section.
-        def set_navigation_section(identifier)
-          @navigation_section = identifier
-        end
-
+      # Assign the current navigation section being viewed.
+      #
+      # @param [ String ] identifier The identifier of the current section.
+      def set_navigation_section(identifier)
+        @navigation_section = identifier
       end
 
     end

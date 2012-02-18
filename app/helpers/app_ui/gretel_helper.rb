@@ -20,7 +20,7 @@ module AppUi
           output = render_breadcrumb_element(crumb) + output
         end
 
-        content_tag(:ul, output)
+        content_tag(:ul, output, class: 'breadcrumb')
 
       else
         nil

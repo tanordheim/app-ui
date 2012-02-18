@@ -24,30 +24,5 @@ module AppUi #:nodoc
       navigation_section == identifier ? 'current' : nil
     end
 
-    # Render the most important flash message available
-    def render_most_important_flash
-        %w(error notice).each do |type|
-          return render_flash_message(flash[type.to_sym], type.to_sym) unless flash[type.to_sym].blank?
-      end
-      nil
-    end
-
-    private
-
-    # Render a flash message using the specified message type.
-    #
-    # @param [ String ] message The message to display.
-    # @param [ Symbol ] type The type of message to render.
-    #
-    # @return [ String ] The rendered flash message.
-    def render_flash_message(message, type)
-
-      close_link = link_to '&times;'.html_safe, '#', :class => 'close'
-      message_body = close_link + content_tag(:p, message)
-
-      content_tag(:article, message_body, :class => ['alert', type.to_s].join(' '))
-
-    end
-
   end
 end

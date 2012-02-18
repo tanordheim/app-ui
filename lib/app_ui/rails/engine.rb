@@ -2,6 +2,8 @@
 
 require 'rails'
 require 'app_ui/controller/navigation_helpers'
+require 'app_ui/controller/flash_helpers'
+require 'app_ui/controller/xhr_helpers'
 
 module AppUi
   module Rails
@@ -24,8 +26,14 @@ module AppUi
       initializer 'app-ui.app_controller' do |app|
         ActiveSupport.on_load(:action_controller) do
 
-          # Add controller navigation helpers.
+          # Add navigation helpers.
           include AppUi::Controller::NavigationHelpers
+
+          # Add flash helpers.
+          include AppUi::Controller::FlashHelpers
+
+          # Add XHR helpers.
+          include AppUi::Controller::XhrHelpers
 
         end
       end
