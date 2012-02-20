@@ -11,6 +11,13 @@
 
 @import 'twitter-bootstrap/modals.less';
 
+// Remove bottom margin on forms within modals.
+.modal-body {
+  form {
+    margin-bottom: 0;
+  }
+}
+
 // Allow the modal footer to live within the modal body for simplicity.
 .modal-footer {
   margin-left: -15px;

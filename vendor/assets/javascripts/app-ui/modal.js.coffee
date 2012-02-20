@@ -55,7 +55,7 @@ class Dialog
 
     # Build the dialog element. If the modal element already exists in the dom,
     # reuse it. Otherwise, create a new one.
-    header = $("<div class=\"modal-header\" />").append($('<a class="close" data-close-modal>&times;</a>')).append($('<h3/>').text(@title))
+    header = $("<div class=\"modal-header\" />").append($('<a class="close" data-dismiss="modal">&times;</a>')).append($('<h3/>').text(@title))
     @$dialog = $("<div class=\"modal hide fade\" />").append(header).append($('<div class="modal-body"/>').html(@body)).appendTo(document.body).show()
 
     transition = $.support.transition
@@ -65,7 +65,7 @@ class Dialog
     if transition then @$dialog.one($.support.transition.end, ->)
 
     # Delegate close requests to the close method.
-    @$dialog.delegate('[data-close-modal]', 'click.close.modal', $.proxy(@close, @))
+    @$dialog.delegate('[data-dismiss="modal"]', 'click.close.modal', $.proxy(@close, @))
 
     # Bind the escape key to closing the modal.
     $(document).on 'keyup.close.modal', (e) =>
