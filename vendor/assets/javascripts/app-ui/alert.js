@@ -96,20 +96,8 @@
 $.displayAlert = function(message) {
 
   // Remove all pre-existing messages from the DOM.
-  $('div.alert').remove();
-
-  // Find the appropriate place to put it.
-  if ($('.page-header').length > 0) {
-
-    // If we have a page header, insert it after that.
-    $('.page-header:first').after(message);
-
-  } else {
-
-    // If all else fails, add it to the top of the content element.
-    $('div.content:first').prepend(message);
-
-  }
+  $('#flash-alert').remove();
+  $('<div id="flash-alert"/>').append(message).appendTo(document.body).fadeIn('fast').delay(5000).fadeOut('fast', function() { $(this).remove(); });
 
 }
 
