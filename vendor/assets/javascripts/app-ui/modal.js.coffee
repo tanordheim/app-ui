@@ -1,9 +1,10 @@
 class Dialog
 
   # Initialize a new dialog.
-  constructor: (title, body) ->
+  constructor: (title, body, userCallback) ->
     @title = title
     @body = body
+    @userCallback = userCallback || ->
 
     showCallback = =>
       @showBackdrop =>
@@ -73,6 +74,9 @@ class Dialog
 
     # Attach ourselves to the dialog data.
     @$dialog.data('modal', @)
+
+    # Fire the user callback.
+    @userCallback()
 
   # Close the dialog.
   close: (e, callback) ->
