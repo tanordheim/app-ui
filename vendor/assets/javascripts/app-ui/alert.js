@@ -123,9 +123,9 @@ $(document).ajaxComplete(function(e, request) {
 $(document).ready(function() {
 
   // If the flash message container has a message in it, move it into place.
-  if ($('#flash-message > article').length > 0) {
+  if ($('#flash-message > div').length > 0) {
 
-    var message = $('#flash-message > article');
+    var message = $('#flash-message > div');
     $.displayAlert(message);
 
   }
