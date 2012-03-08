@@ -9,7 +9,6 @@ module AppUi #:nodoc
 
       included do
         helper_method :most_important_flash
-        helper_method :render_most_important_flash
       end
 
       private
@@ -27,20 +26,6 @@ module AppUi #:nodoc
       def flash_type_to_css_class(type)
         map = { error: 'error', notice: 'success' }
         map[type]
-      end
-
-      # Render the most important flash message available.
-      #
-      # @return [ String ] The DOM for the most important flash message, or nil if
-      #   no flash messages are present.
-      def render_most_important_flash
-        message = most_important_flash
-        if message.blank?
-          nil
-        else
-          close_link = content_tag(:a, '&times;'.html_safe, class: 'close', :'data-dismiss' => 'alert')
-          content_tag(:div, close_link + message[:message], :class => ['alert', "alert-#{message[:type]}"].join(' '))
-        end
       end
 
     end
