@@ -112,8 +112,8 @@ class Dialog
       if callback? then callback()
 
 # Modal plugin definition.
-$.modal = (title, body) ->
-  new Dialog(title, body)
+$.modal = (title, body, userCallback) ->
+  new Dialog(title, body, userCallback)
 
 $.closeModal = ->
   if $('body > .modal').length > 0
