@@ -96,8 +96,10 @@
 $.displayAlert = function(message) {
 
   // Remove all pre-existing messages from the DOM.
-  // $('#flash-alert').remove();
-  // $('<div id="flash-alert"/>').append(message).appendTo(document.body).show(); //fadeIn('fast').delay(5000).fadeOut('fast', function() { $(this).remove(); });
+  $('#flash-alert').empty();
+  
+  // Show the new flash message.
+  $('#flash-alert').append(message).show().delay(5000).slideUp('fast', function() { $(this).empty(); });
 
 }
 
@@ -124,15 +126,15 @@ $(document).ready(function() {
 
   // Build the container for the flash messages unless it already exists.
   if ($('#flash-alert').length == 0) {
-    $('<div id="flash-alert"/>').appendTo('section.content-wrapper > section.content');
+    $('<div id="flash-alert"/>').prependTo('section.content-wrapper > section.content');
   }
 
   // If the flash message container has a message in it, move it into place.
-  // if ($('#flash-message > div').length > 0) {
+  if ($('#flash-message > div').length > 0) {
 
-  //   var message = $('#flash-message > div');
-  //   $.displayAlert(message);
+    var message = $('#flash-message > div');
+    $.displayAlert(message);
 
-  // }
+  }
 
 });

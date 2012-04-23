@@ -18,15 +18,14 @@
 
 // Container showing temporary flash messages.
 #flash-alert {
-  display: none;
-  position: fixed;
-  z-index: 10;
-  width: 700px;
-  top: 30px;
-  left: 50%;
-  margin-left: -350px;
+  margin: -10px -20px;
 
-  article {
-    .box-shadow(0 0 4px rgba(0, 0, 0, 0.35));
+  .alert {
+    .border-radius(0px);
+    border-top-color: rgba(0, 0, 0, 0.1);
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
   }
 }
